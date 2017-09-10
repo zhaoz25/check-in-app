@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CheckInApp.views.LogChartView"
+             xmlns:oxy="clr-namespace:OxyPlot.Xamarin.Forms;assembly=OxyPlot.Xamarin.Forms">
+    <ContentPage.Content>
+        <StackLayout >
+            <StackLayout Orientation="Horizontal">
+                <Picker x:Name="picker" Title="Chọn tháng " SelectedIndexChanged="picker_SelectedIndexChanged" WidthRequest="150">
+                </Picker>
+                <Picker x:Name="picker2" Title="Chọn biểu đồ " WidthRequest="150" SelectedIndexChanged="picker2_SelectedIndexChanged">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Biêu đồ cột</x:String>
+                            <x:String>Biêu đồ tròn</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </StackLayout>
+            <ActivityIndicator x:Name="loadingProgress" IsRunning="False" IsEnabled="False"/>
+            <oxy:PlotView x:Name="chart" Model="{Binding ChartModel}"  
+                  BackgroundColor="LightYellow" 
+                  VerticalOptions="Center" HorizontalOptions="Center" WidthRequest="400"  HeightRequest="400"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Messier16.Forms.Controls.Checkbox</name>
+    </assembly>
+    <members>
+        <member name="T:Messier16.Forms.Controls.Checkbox">
+            <summary>
+            The check box.
+            </summary>
+        </member>
+        <member name="F:Messier16.Forms.Controls.Checkbox.CheckedProperty">
+            <summary>
+            The checked state property.
+            </summary>
+        </member>
+        <member name="P:Messier16.Forms.Controls.Checkbox.Checked">
+            <summary>
+            Gets or sets a value indicating whether the control is checked.
+            </summary>
+            <value>The checked state.</value>
+        </member>
+        <member name="E:Messier16.Forms.Controls.Checkbox.CheckedChanged">
+            <summary>
+            The checked changed event.
+            </summary>
+        </member>
+        <member name="M:Messier16.Forms.Controls.Checkbox.OnCheckedPropertyChanged(Xamarin.Forms.BindableObject,System.Object,System.Object)">
+            <summary>
+            Called when [checked property changed].
+            </summary>
+            <param name="bindable">The bindable.</param>
+            <param name="oldvalue">if set to <c>true</c> [oldvalue].</param>
+            <param name="newvalue">if set to <c>true</c> [newvalue].</param>
+        </member>
+        <member name="T:Messier16.Forms.Controls.CheckedChangedEventArgs">
+            <summary>
+            Generic event argument class
+            </summary>
+            <typeparam name="T">Type of the argument</typeparam>
+        </member>
+        <member name="M:Messier16.Forms.Controls.CheckedChangedEventArgs.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.EventArgs"/> class.
+            </summary>
+            <param name = "chkd"></param>
+        </member>
+        <member name="P:Messier16.Forms.Controls.CheckedChangedEventArgs.IsChecked">
+            <summary>
+            Gets the value of the event argument
+            </summary>
+        </member>
+    </members>
+</doc>

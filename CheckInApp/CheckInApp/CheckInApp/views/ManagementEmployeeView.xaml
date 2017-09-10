@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CheckInApp.views.ManagementEmployeeView">
+    <ContentPage.Content>
+
+        <StackLayout >
+            <Label x:Name="labelDS" Text="Danh sách nhân viên " TextColor="DarkBlue" FontAttributes="Bold" 
+                   FontSize="20" XAlign="Center" Margin="0,20,0,0"/>
+            <ListView x:Name="lvEmployee" RowHeight="75" SeparatorVisibility="Default" ItemSelected="lvEmployee_ItemSelected">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell >
+
+                            <ViewCell.View>
+                                <StackLayout HeightRequest="100">
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Mã nhân viên:" FontSize="22"/>
+                                        <Label Text="{Binding employeeCode}" FontSize="22"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Tên nhân viên:" FontSize="22"/>
+                                        <Label Text="{Binding fullName}" FontSize="22"></Label>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell> –>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button x:Name="btChart" Text="Biểu đồ" FontSize="20" HorizontalOptions="Center" WidthRequest="200"
+                    Clicked="btChart_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

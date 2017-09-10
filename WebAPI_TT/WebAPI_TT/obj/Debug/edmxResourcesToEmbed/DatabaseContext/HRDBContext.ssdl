@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="HR_Department">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="400" />
+    <Property Name="NameInEng" Type="nvarchar" MaxLength="400" />
+    <Property Name="Code" Type="nvarchar" MaxLength="50" />
+    <Property Name="ParentIndex" Type="bigint" />
+    <Property Name="CompanyID" Type="nvarchar" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="WorkingDays" Type="float" />
+    <Property Name="WorkingHours" Type="float" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedUser" Type="nvarchar" MaxLength="100" />
+    <Property Name="Location" Type="nvarchar" MaxLength="300" />
+    <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
+    <Property Name="Note" Type="nvarchar" MaxLength="300" />
+    <Property Name="ContactEmail" Type="nvarchar" MaxLength="100" />
+    <Property Name="DateOfCreation" Type="smalldatetime" />
+  </EntityType>
+  <EntityType Name="HR_Employee">
+    <Key>
+      <PropertyRef Name="EmployeeATID" />
+    </Key>
+    <Property Name="EmployeeATID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Image" Type="image" />
+    <Property Name="EmployeeCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="CardNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="LastName" Type="nvarchar" MaxLength="100" />
+    <Property Name="MidName" Type="nvarchar" MaxLength="150" />
+    <Property Name="FirstName" Type="nvarchar" MaxLength="100" />
+    <Property Name="NickName" Type="nvarchar" MaxLength="200" />
+    <Property Name="Gender" Type="bit" />
+    <Property Name="JoinedDate" Type="datetime" />
+    <Property Name="DayOfBirth" Type="smallint" />
+    <Property Name="MonthOfBirth" Type="smallint" />
+    <Property Name="YearOfBirth" Type="smallint" />
+    <Property Name="PlaceOfBirth" Type="nvarchar" MaxLength="200" />
+    <Property Name="Ethnic" Type="int" />
+    <Property Name="Religion" Type="int" />
+    <Property Name="Nationality" Type="int" />
+    <Property Name="HouseHold" Type="int" />
+    <Property Name="NativeCity" Type="nvarchar" MaxLength="200" />
+    <Property Name="NRIC" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateOfNRIC" Type="datetime" />
+    <Property Name="PlaceOfNRIC" Type="nvarchar" MaxLength="200" />
+    <Property Name="EmployeeKind" Type="int" />
+    <Property Name="EducationIndex" Type="int" />
+    <Property Name="EducationLevel" Type="nvarchar" MaxLength="10" />
+    <Property Name="MaritalSatus" Type="smallint" />
+    <Property Name="TaxNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="MarkForDelete" Type="bit" />
+    <Property Name="MaritalDate" Type="smalldatetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedUser" Type="nvarchar" MaxLength="100" />
+    <Property Name="WorkingDate" Type="datetime" />
+    <Property Name="UnionJoinedDate" Type="smalldatetime" />
+    <Property Name="NativeCityIndex" Type="int" />
+    <Property Name="NativeCity_District" Type="nvarchar" MaxLength="100" />
+    <Property Name="SocialInsNo" Type="nvarchar" MaxLength="30" />
+    <Property Name="NativeCity_Wards" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="HR_EmployeeSystem">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeATID" Type="nvarchar" MaxLength="10" />
+    <Property Name="SystemIndex" Type="bigint" />
+    <Property Name="AccountName" Type="nvarchar" MaxLength="100" />
+    <Property Name="Password" Type="varchar" MaxLength="100" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedUser" Type="nvarchar" MaxLength="100" />
+    <Property Name="Helper" Type="nvarchar" MaxLength="10" />
+    <Property Name="ResetPasswordCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Level1" Type="nvarchar" MaxLength="10" />
+    <Property Name="Level2" Type="nvarchar" MaxLength="10" />
+    <Property Name="Level3" Type="nvarchar" MaxLength="10" />
+    <Property Name="Level4" Type="nvarchar" MaxLength="10" />
+    <Property Name="Level5" Type="nvarchar" MaxLength="10" />
+    <Property Name="Active" Type="bit" />
+    <Property Name="HRPro7Portal" Type="smallint" />
+    <Property Name="TrainingPortal" Type="smallint" />
+    <Property Name="EvaluationPortal" Type="smallint" />
+    <Property Name="PleasureEstimatingPortal" Type="smallint" />
+    <Property Name="EclaimPortal" Type="smallint" />
+    <Property Name="RecruitmentPortal" Type="smallint" />
+    <Property Name="SystemGroup" Type="int" />
+  </EntityType>
+  <EntityType Name="HR_WorkingInfo">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="EmployeeATID" Type="nvarchar" MaxLength="10" />
+    <Property Name="DepartmentIndex" Type="bigint" />
+    <Property Name="PositionIndex" Type="bigint" />
+    <Property Name="TitlesIndex" Type="bigint" />
+    <Property Name="IsManager" Type="bit" />
+    <Property Name="ManagedDepartment" Type="bigint" />
+    <Property Name="DirectManager" Type="nvarchar" MaxLength="10" />
+    <Property Name="FromDate" Type="datetime" />
+    <Property Name="ToDate" Type="datetime" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedUser" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreateSeparatedSalary" Type="bit" />
+    <Property Name="ManagedOtherDepartments" Type="nvarchar" MaxLength="3000" />
+    <Property Name="Note" Type="nvarchar" MaxLength="200" />
+    <Property Name="EmployeeKind" Type="int" />
+    <Property Name="Synched" Type="smallint" />
+    <Property Name="JobDescription" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="MS_ValidLocationList">
+    <Key>
+      <PropertyRef Name="Index" />
+    </Key>
+    <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" />
+    <Property Name="IPAddress" Type="nvarchar" MaxLength="100" />
+    <Property Name="SerialNumber" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="300" />
+    <Property Name="UpdatedDate" Type="smalldatetime" />
+    <Property Name="UpdatedUser" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TA_EmployeeSpecialShiftDetail">
+    <Key>
+      <PropertyRef Name="EmployeeATID" />
+      <PropertyRef Name="Date" />
+      <PropertyRef Name="StartTime" />
+    </Key>
+    <Property Name="EmployeeATID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="StartTime" Type="datetime" Nullable="false" />
+    <Property Name="EndTime" Type="datetime" Nullable="false" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedUser" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="TA_TimeLog">
+    <Key>
+      <PropertyRef Name="EmployeeATID" />
+      <PropertyRef Name="Time" />
+    </Key>
+    <Property Name="EmployeeATID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Time" Type="datetime" Nullable="false" />
+    <Property Name="MachineSerial" Type="nvarchar" MaxLength="20" />
+    <Property Name="InOutMode" Type="smallint" />
+    <Property Name="SpecifiedMode" Type="smallint" />
+    <Property Name="Action" Type="varchar" MaxLength="5" />
+    <Property Name="UpdatedDate" Type="datetime" />
+    <Property Name="UpdatedUser" Type="nvarchar" MaxLength="100" />
+    <Property Name="EventIndex" Type="bigint" />
+    <Property Name="Suggest" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="TestModelStoreContainer">
+    <EntitySet Name="HR_Department" EntityType="Self.HR_Department" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HR_Employee" EntityType="Self.HR_Employee" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HR_EmployeeSystem" EntityType="Self.HR_EmployeeSystem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HR_WorkingInfo" EntityType="Self.HR_WorkingInfo" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MS_ValidLocationList" EntityType="Self.MS_ValidLocationList" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TA_EmployeeSpecialShiftDetail" EntityType="Self.TA_EmployeeSpecialShiftDetail" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TA_TimeLog" EntityType="Self.TA_TimeLog" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

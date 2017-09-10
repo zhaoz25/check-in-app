@@ -1,0 +1,62 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CheckInApp.views.EmployeeInfoView">
+    <ContentPage.ToolbarItems >
+        <ToolbarItem Name="toolChangePass" Order="Secondary" Text="Đổi mật khẩu" Clicked="toolChangePass_Clicked" />
+        <ToolbarItem Name="toolLogout" Order="Secondary" Text="Đăng xuất" Clicked="toolLogout_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        
+        <StackLayout BackgroundColor="LightGray">
+            
+            <Label x:Name="labelWelcome" Text="Welcome : " TextColor="Black" XAlign="Center" FontSize="22" Margin="10"/>
+            <StackLayout Orientation="Horizontal" >
+                <Button x:Name="checkIn" Text="Check In" WidthRequest="200" HeightRequest="50" HorizontalOptions="Center"
+                        FontSize="20" BackgroundColor="LightGreen" Clicked="checkIn_Clicked"/>
+                <Button x:Name="checkOut" Text="Check Out" WidthRequest="200" HeightRequest="50" HorizontalOptions="Center"
+                        FontSize="20" BackgroundColor="OrangeRed" Clicked="checkOut_Clicked"/>
+            </StackLayout>
+            
+            <Label Text="Thông tin cơ bản " TextColor="DarkBlue" FontAttributes="Bold"
+                   FontSize="24" Margin="0,0,120,0"/>
+
+            <StackLayout BackgroundColor="LightBlue" Margin="0,5,0,0">
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Mã nhân viên:" TextColor="Black" FontSize="20"/>
+                    <Label Text="{Binding employeeCode}" TextColor="Black" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Họ tên:" TextColor="Black" FontSize="20"/>
+                    <Label Text="{Binding fullName}" TextColor="Black" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Ngày sinh:" TextColor="Black" FontSize="20"/>
+                    <Label Text="{Binding joinedDateDay}" TextColor="Black" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Phòng ban:" TextColor="Black" FontSize="20"/>
+                    <Label Text="{Binding departmentName}" TextColor="Black" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Từ ngày:" TextColor="Black" FontSize="20"/>
+                    <Label Text="{Binding fromDateDay}" TextColor="Black" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Đến ngày:" TextColor="Black" FontSize="20"/>
+                    <Label Text="{Binding toDateDay}" TextColor="Black" FontSize="20"/>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Phòng:" TextColor="Black" FontSize="20"/>
+                    <Label Text="{Binding departmentName}" TextColor="Black" FontSize="20"/>
+                </StackLayout>
+            </StackLayout>
+            <ActivityIndicator x:Name="loadingProgress" Color="CornflowerBlue" IsRunning="false" />
+            <Button x:Name="btnAdvance" Text="Chức năng nâng cao" FontSize="20" Margin="80,10,80,0"
+                    TextColor="White" BackgroundColor="DarkBlue" Clicked="btnAdvance_Clicked"/>
+            
+        </StackLayout>
+        
+    </ContentPage.Content>
+    
+</ContentPage>

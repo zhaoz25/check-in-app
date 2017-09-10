@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TestModelStoreContainer" CdmEntityContainer="HREntities">
+    <EntitySetMapping Name="HR_Department">
+      <EntityTypeMapping TypeName="TestModel.HR_Department">
+        <MappingFragment StoreEntitySet="HR_Department">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="NameInEng" ColumnName="NameInEng" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="ParentIndex" ColumnName="ParentIndex" />
+          <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="WorkingDays" ColumnName="WorkingDays" />
+          <ScalarProperty Name="WorkingHours" ColumnName="WorkingHours" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedUser" ColumnName="UpdatedUser" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+          <ScalarProperty Name="DateOfCreation" ColumnName="DateOfCreation" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HR_Employee">
+      <EntityTypeMapping TypeName="TestModel.HR_Employee">
+        <MappingFragment StoreEntitySet="HR_Employee">
+          <ScalarProperty Name="EmployeeATID" ColumnName="EmployeeATID" />
+          <ScalarProperty Name="Image" ColumnName="Image" />
+          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+          <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="MidName" ColumnName="MidName" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="NickName" ColumnName="NickName" />
+          <ScalarProperty Name="Gender" ColumnName="Gender" />
+          <ScalarProperty Name="JoinedDate" ColumnName="JoinedDate" />
+          <ScalarProperty Name="DayOfBirth" ColumnName="DayOfBirth" />
+          <ScalarProperty Name="MonthOfBirth" ColumnName="MonthOfBirth" />
+          <ScalarProperty Name="YearOfBirth" ColumnName="YearOfBirth" />
+          <ScalarProperty Name="PlaceOfBirth" ColumnName="PlaceOfBirth" />
+          <ScalarProperty Name="Ethnic" ColumnName="Ethnic" />
+          <ScalarProperty Name="Religion" ColumnName="Religion" />
+          <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+          <ScalarProperty Name="HouseHold" ColumnName="HouseHold" />
+          <ScalarProperty Name="NativeCity" ColumnName="NativeCity" />
+          <ScalarProperty Name="NRIC" ColumnName="NRIC" />
+          <ScalarProperty Name="DateOfNRIC" ColumnName="DateOfNRIC" />
+          <ScalarProperty Name="PlaceOfNRIC" ColumnName="PlaceOfNRIC" />
+          <ScalarProperty Name="EmployeeKind" ColumnName="EmployeeKind" />
+          <ScalarProperty Name="EducationIndex" ColumnName="EducationIndex" />
+          <ScalarProperty Name="EducationLevel" ColumnName="EducationLevel" />
+          <ScalarProperty Name="MaritalSatus" ColumnName="MaritalSatus" />
+          <ScalarProperty Name="TaxNumber" ColumnName="TaxNumber" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="MarkForDelete" ColumnName="MarkForDelete" />
+          <ScalarProperty Name="MaritalDate" ColumnName="MaritalDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedUser" ColumnName="UpdatedUser" />
+          <ScalarProperty Name="WorkingDate" ColumnName="WorkingDate" />
+          <ScalarProperty Name="UnionJoinedDate" ColumnName="UnionJoinedDate" />
+          <ScalarProperty Name="NativeCityIndex" ColumnName="NativeCityIndex" />
+          <ScalarProperty Name="NativeCity_District" ColumnName="NativeCity_District" />
+          <ScalarProperty Name="SocialInsNo" ColumnName="SocialInsNo" />
+          <ScalarProperty Name="NativeCity_Wards" ColumnName="NativeCity_Wards" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HR_EmployeeSystem">
+      <EntityTypeMapping TypeName="TestModel.HR_EmployeeSystem">
+        <MappingFragment StoreEntitySet="HR_EmployeeSystem">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="EmployeeATID" ColumnName="EmployeeATID" />
+          <ScalarProperty Name="SystemIndex" ColumnName="SystemIndex" />
+          <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedUser" ColumnName="UpdatedUser" />
+          <ScalarProperty Name="Helper" ColumnName="Helper" />
+          <ScalarProperty Name="ResetPasswordCode" ColumnName="ResetPasswordCode" />
+          <ScalarProperty Name="Level1" ColumnName="Level1" />
+          <ScalarProperty Name="Level2" ColumnName="Level2" />
+          <ScalarProperty Name="Level3" ColumnName="Level3" />
+          <ScalarProperty Name="Level4" ColumnName="Level4" />
+          <ScalarProperty Name="Level5" ColumnName="Level5" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="HRPro7Portal" ColumnName="HRPro7Portal" />
+          <ScalarProperty Name="TrainingPortal" ColumnName="TrainingPortal" />
+          <ScalarProperty Name="EvaluationPortal" ColumnName="EvaluationPortal" />
+          <ScalarProperty Name="PleasureEstimatingPortal" ColumnName="PleasureEstimatingPortal" />
+          <ScalarProperty Name="EclaimPortal" ColumnName="EclaimPortal" />
+          <ScalarProperty Name="RecruitmentPortal" ColumnName="RecruitmentPortal" />
+          <ScalarProperty Name="SystemGroup" ColumnName="SystemGroup" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HR_WorkingInfo">
+      <EntityTypeMapping TypeName="TestModel.HR_WorkingInfo">
+        <MappingFragment StoreEntitySet="HR_WorkingInfo">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="EmployeeATID" ColumnName="EmployeeATID" />
+          <ScalarProperty Name="DepartmentIndex" ColumnName="DepartmentIndex" />
+          <ScalarProperty Name="PositionIndex" ColumnName="PositionIndex" />
+          <ScalarProperty Name="TitlesIndex" ColumnName="TitlesIndex" />
+          <ScalarProperty Name="IsManager" ColumnName="IsManager" />
+          <ScalarProperty Name="ManagedDepartment" ColumnName="ManagedDepartment" />
+          <ScalarProperty Name="DirectManager" ColumnName="DirectManager" />
+          <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+          <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedUser" ColumnName="UpdatedUser" />
+          <ScalarProperty Name="CreateSeparatedSalary" ColumnName="CreateSeparatedSalary" />
+          <ScalarProperty Name="ManagedOtherDepartments" ColumnName="ManagedOtherDepartments" />
+          <ScalarProperty Name="Note" ColumnName="Note" />
+          <ScalarProperty Name="EmployeeKind" ColumnName="EmployeeKind" />
+          <ScalarProperty Name="Synched" ColumnName="Synched" />
+          <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MS_ValidLocationList">
+      <EntityTypeMapping TypeName="TestModel.MS_ValidLocationList">
+        <MappingFragment StoreEntitySet="MS_ValidLocationList">
+          <ScalarProperty Name="Index" ColumnName="Index" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+          <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedUser" ColumnName="UpdatedUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="TestModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TA_EmployeeSpecialShiftDetail">
+      <EntityTypeMapping TypeName="TestModel.TA_EmployeeSpecialShiftDetail">
+        <MappingFragment StoreEntitySet="TA_EmployeeSpecialShiftDetail">
+          <ScalarProperty Name="EmployeeATID" ColumnName="EmployeeATID" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedUser" ColumnName="UpdatedUser" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TA_TimeLog">
+      <EntityTypeMapping TypeName="TestModel.TA_TimeLog">
+        <MappingFragment StoreEntitySet="TA_TimeLog">
+          <ScalarProperty Name="EmployeeATID" ColumnName="EmployeeATID" />
+          <ScalarProperty Name="Time" ColumnName="Time" />
+          <ScalarProperty Name="MachineSerial" ColumnName="MachineSerial" />
+          <ScalarProperty Name="InOutMode" ColumnName="InOutMode" />
+          <ScalarProperty Name="SpecifiedMode" ColumnName="SpecifiedMode" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="UpdatedUser" ColumnName="UpdatedUser" />
+          <ScalarProperty Name="EventIndex" ColumnName="EventIndex" />
+          <ScalarProperty Name="Suggest" ColumnName="Suggest" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

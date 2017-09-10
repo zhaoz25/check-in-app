@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:CheckInApp"
+             
+             x:Class="CheckInApp.MainPage">
+
+    <StackLayout BackgroundColor="LightBlue" >
+        <Label Text="Đăng nhập vào ứng dụng" TextColor="Black" XAlign="Center" FontSize="24" Margin="50" />
+        <Entry x:Name="etEmail"  Placeholder="Email:" TextColor="Black" TextChanged="etEmail_TextChanged">
+                
+        </Entry>
+        <Label x:Name="labelError" Text="" XAlign="Center"/>
+        <Entry x:Name="etPass" IsPassword="True" Placeholder="Mật khẩu:" TextColor="Black"/>
+        <ActivityIndicator x:Name="loadingProgress" Color="CornflowerBlue" IsRunning="false" />
+        
+        <Button x:Name="btnLogin" Text="Đăng nhập" Margin="80,20,80,10" BackgroundColor="MidnightBlue" FontSize="20" TextColor="White"  Clicked="btnLogin_Clicked"/>
+        <Label x:Name="labelForget" Text="Quên mật khẩu"  Margin="50" TextColor="DeepSkyBlue" FontSize="22" XAlign="Center"/>
+
+        
+        
+    </StackLayout>
+
+</ContentPage>

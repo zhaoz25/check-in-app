@@ -1,0 +1,562 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="TestModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="HR_Department">
+          <Key>
+            <PropertyRef Name="Index" />
+          </Key>
+          <Property Name="Index" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="400" />
+          <Property Name="NameInEng" Type="nvarchar" MaxLength="400" />
+          <Property Name="Code" Type="nvarchar" MaxLength="50" />
+          <Property Name="ParentIndex" Type="bigint" />
+          <Property Name="CompanyID" Type="nvarchar" MaxLength="200" />
+          <Property Name="Description" Type="nvarchar" MaxLength="500" />
+          <Property Name="WorkingDays" Type="float" />
+          <Property Name="WorkingHours" Type="float" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedUser" Type="nvarchar" MaxLength="100" />
+          <Property Name="Location" Type="nvarchar" MaxLength="300" />
+          <Property Name="PhoneNumber" Type="nvarchar" MaxLength="20" />
+          <Property Name="Note" Type="nvarchar" MaxLength="300" />
+          <Property Name="ContactEmail" Type="nvarchar" MaxLength="100" />
+          <Property Name="DateOfCreation" Type="smalldatetime" />
+        </EntityType>
+        <EntityType Name="HR_Employee">
+          <Key>
+            <PropertyRef Name="EmployeeATID" />
+          </Key>
+          <Property Name="EmployeeATID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Image" Type="image" />
+          <Property Name="EmployeeCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="CardNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="LastName" Type="nvarchar" MaxLength="100" />
+          <Property Name="MidName" Type="nvarchar" MaxLength="150" />
+          <Property Name="FirstName" Type="nvarchar" MaxLength="100" />
+          <Property Name="NickName" Type="nvarchar" MaxLength="200" />
+          <Property Name="Gender" Type="bit" />
+          <Property Name="JoinedDate" Type="datetime" />
+          <Property Name="DayOfBirth" Type="smallint" />
+          <Property Name="MonthOfBirth" Type="smallint" />
+          <Property Name="YearOfBirth" Type="smallint" />
+          <Property Name="PlaceOfBirth" Type="nvarchar" MaxLength="200" />
+          <Property Name="Ethnic" Type="int" />
+          <Property Name="Religion" Type="int" />
+          <Property Name="Nationality" Type="int" />
+          <Property Name="HouseHold" Type="int" />
+          <Property Name="NativeCity" Type="nvarchar" MaxLength="200" />
+          <Property Name="NRIC" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateOfNRIC" Type="datetime" />
+          <Property Name="PlaceOfNRIC" Type="nvarchar" MaxLength="200" />
+          <Property Name="EmployeeKind" Type="int" />
+          <Property Name="EducationIndex" Type="int" />
+          <Property Name="EducationLevel" Type="nvarchar" MaxLength="10" />
+          <Property Name="MaritalSatus" Type="smallint" />
+          <Property Name="TaxNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="MarkForDelete" Type="bit" />
+          <Property Name="MaritalDate" Type="smalldatetime" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedUser" Type="nvarchar" MaxLength="100" />
+          <Property Name="WorkingDate" Type="datetime" />
+          <Property Name="UnionJoinedDate" Type="smalldatetime" />
+          <Property Name="NativeCityIndex" Type="int" />
+          <Property Name="NativeCity_District" Type="nvarchar" MaxLength="100" />
+          <Property Name="SocialInsNo" Type="nvarchar" MaxLength="30" />
+          <Property Name="NativeCity_Wards" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="HR_EmployeeSystem">
+          <Key>
+            <PropertyRef Name="Index" />
+          </Key>
+          <Property Name="Index" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeATID" Type="nvarchar" MaxLength="10" />
+          <Property Name="SystemIndex" Type="bigint" />
+          <Property Name="AccountName" Type="nvarchar" MaxLength="100" />
+          <Property Name="Password" Type="varchar" MaxLength="100" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedUser" Type="nvarchar" MaxLength="100" />
+          <Property Name="Helper" Type="nvarchar" MaxLength="10" />
+          <Property Name="ResetPasswordCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Level1" Type="nvarchar" MaxLength="10" />
+          <Property Name="Level2" Type="nvarchar" MaxLength="10" />
+          <Property Name="Level3" Type="nvarchar" MaxLength="10" />
+          <Property Name="Level4" Type="nvarchar" MaxLength="10" />
+          <Property Name="Level5" Type="nvarchar" MaxLength="10" />
+          <Property Name="Active" Type="bit" />
+          <Property Name="HRPro7Portal" Type="smallint" />
+          <Property Name="TrainingPortal" Type="smallint" />
+          <Property Name="EvaluationPortal" Type="smallint" />
+          <Property Name="PleasureEstimatingPortal" Type="smallint" />
+          <Property Name="EclaimPortal" Type="smallint" />
+          <Property Name="RecruitmentPortal" Type="smallint" />
+          <Property Name="SystemGroup" Type="int" />
+        </EntityType>
+        <EntityType Name="HR_WorkingInfo">
+          <Key>
+            <PropertyRef Name="Index" />
+          </Key>
+          <Property Name="Index" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="EmployeeATID" Type="nvarchar" MaxLength="10" />
+          <Property Name="DepartmentIndex" Type="bigint" />
+          <Property Name="PositionIndex" Type="bigint" />
+          <Property Name="TitlesIndex" Type="bigint" />
+          <Property Name="IsManager" Type="bit" />
+          <Property Name="ManagedDepartment" Type="bigint" />
+          <Property Name="DirectManager" Type="nvarchar" MaxLength="10" />
+          <Property Name="FromDate" Type="datetime" />
+          <Property Name="ToDate" Type="datetime" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedUser" Type="nvarchar" MaxLength="100" />
+          <Property Name="CreateSeparatedSalary" Type="bit" />
+          <Property Name="ManagedOtherDepartments" Type="nvarchar" MaxLength="3000" />
+          <Property Name="Note" Type="nvarchar" MaxLength="200" />
+          <Property Name="EmployeeKind" Type="int" />
+          <Property Name="Synched" Type="smallint" />
+          <Property Name="JobDescription" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="MS_ValidLocationList">
+          <Key>
+            <PropertyRef Name="Index" />
+          </Key>
+          <Property Name="Index" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="200" />
+          <Property Name="IPAddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="SerialNumber" Type="nvarchar" MaxLength="50" />
+          <Property Name="Description" Type="nvarchar" MaxLength="300" />
+          <Property Name="UpdatedDate" Type="smalldatetime" />
+          <Property Name="UpdatedUser" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TA_EmployeeSpecialShiftDetail">
+          <Key>
+            <PropertyRef Name="EmployeeATID" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="StartTime" />
+          </Key>
+          <Property Name="EmployeeATID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="StartTime" Type="datetime" Nullable="false" />
+          <Property Name="EndTime" Type="datetime" Nullable="false" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedUser" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TA_TimeLog">
+          <Key>
+            <PropertyRef Name="EmployeeATID" />
+            <PropertyRef Name="Time" />
+          </Key>
+          <Property Name="EmployeeATID" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Time" Type="datetime" Nullable="false" />
+          <Property Name="MachineSerial" Type="nvarchar" MaxLength="20" />
+          <Property Name="InOutMode" Type="smallint" />
+          <Property Name="SpecifiedMode" Type="smallint" />
+          <Property Name="Action" Type="varchar" MaxLength="5" />
+          <Property Name="UpdatedDate" Type="datetime" />
+          <Property Name="UpdatedUser" Type="nvarchar" MaxLength="100" />
+          <Property Name="EventIndex" Type="bigint" />
+          <Property Name="Suggest" Type="bit" />
+        </EntityType>
+        <EntityContainer Name="TestModelStoreContainer">
+          <EntitySet Name="HR_Department" EntityType="Self.HR_Department" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HR_Employee" EntityType="Self.HR_Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HR_EmployeeSystem" EntityType="Self.HR_EmployeeSystem" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HR_WorkingInfo" EntityType="Self.HR_WorkingInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MS_ValidLocationList" EntityType="Self.MS_ValidLocationList" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TA_EmployeeSpecialShiftDetail" EntityType="Self.TA_EmployeeSpecialShiftDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TA_TimeLog" EntityType="Self.TA_TimeLog" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TestModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="HR_Department">
+          <Key>
+            <PropertyRef Name="Index" />
+          </Key>
+          <Property Name="Index" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="NameInEng" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="Code" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ParentIndex" Type="Int64" />
+          <Property Name="CompanyID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="WorkingDays" Type="Double" />
+          <Property Name="WorkingHours" Type="Double" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Location" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="PhoneNumber" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="ContactEmail" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfCreation" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="HR_Employee">
+          <Key>
+            <PropertyRef Name="EmployeeATID" />
+          </Key>
+          <Property Name="EmployeeATID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="EmployeeCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="CardNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="MidName" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="NickName" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Gender" Type="Boolean" />
+          <Property Name="JoinedDate" Type="DateTime" Precision="3" />
+          <Property Name="DayOfBirth" Type="Int16" />
+          <Property Name="MonthOfBirth" Type="Int16" />
+          <Property Name="YearOfBirth" Type="Int16" />
+          <Property Name="PlaceOfBirth" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="Ethnic" Type="Int32" />
+          <Property Name="Religion" Type="Int32" />
+          <Property Name="Nationality" Type="Int32" />
+          <Property Name="HouseHold" Type="Int32" />
+          <Property Name="NativeCity" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="NRIC" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateOfNRIC" Type="DateTime" Precision="3" />
+          <Property Name="PlaceOfNRIC" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeKind" Type="Int32" />
+          <Property Name="EducationIndex" Type="Int32" />
+          <Property Name="EducationLevel" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MaritalSatus" Type="Int16" />
+          <Property Name="TaxNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="MarkForDelete" Type="Boolean" />
+          <Property Name="MaritalDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="WorkingDate" Type="DateTime" Precision="3" />
+          <Property Name="UnionJoinedDate" Type="DateTime" Precision="0" />
+          <Property Name="NativeCityIndex" Type="Int32" />
+          <Property Name="NativeCity_District" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SocialInsNo" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+          <Property Name="NativeCity_Wards" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="HR_EmployeeSystem">
+          <Key>
+            <PropertyRef Name="Index" />
+          </Key>
+          <Property Name="Index" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeATID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="SystemIndex" Type="Int64" />
+          <Property Name="AccountName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Helper" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="ResetPasswordCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Level1" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Level2" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Level3" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Level4" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Level5" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Active" Type="Boolean" />
+          <Property Name="HRPro7Portal" Type="Int16" />
+          <Property Name="TrainingPortal" Type="Int16" />
+          <Property Name="EvaluationPortal" Type="Int16" />
+          <Property Name="PleasureEstimatingPortal" Type="Int16" />
+          <Property Name="EclaimPortal" Type="Int16" />
+          <Property Name="RecruitmentPortal" Type="Int16" />
+          <Property Name="SystemGroup" Type="Int32" />
+        </EntityType>
+        <EntityType Name="HR_WorkingInfo">
+          <Key>
+            <PropertyRef Name="Index" />
+          </Key>
+          <Property Name="Index" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="EmployeeATID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="DepartmentIndex" Type="Int64" />
+          <Property Name="PositionIndex" Type="Int64" />
+          <Property Name="TitlesIndex" Type="Int64" />
+          <Property Name="IsManager" Type="Boolean" />
+          <Property Name="ManagedDepartment" Type="Int64" />
+          <Property Name="DirectManager" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="FromDate" Type="DateTime" Precision="3" />
+          <Property Name="ToDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="CreateSeparatedSalary" Type="Boolean" />
+          <Property Name="ManagedOtherDepartments" Type="String" MaxLength="3000" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="EmployeeKind" Type="Int32" />
+          <Property Name="Synched" Type="Int16" />
+          <Property Name="JobDescription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="MS_ValidLocationList">
+          <Key>
+            <PropertyRef Name="Index" />
+          </Key>
+          <Property Name="Index" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="IPAddress" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="SerialNumber" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Description" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+          <Property Name="UpdatedUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TA_EmployeeSpecialShiftDetail">
+          <Key>
+            <PropertyRef Name="EmployeeATID" />
+            <PropertyRef Name="Date" />
+            <PropertyRef Name="StartTime" />
+          </Key>
+          <Property Name="EmployeeATID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TA_TimeLog">
+          <Key>
+            <PropertyRef Name="EmployeeATID" />
+            <PropertyRef Name="Time" />
+          </Key>
+          <Property Name="EmployeeATID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Time" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="MachineSerial" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="InOutMode" Type="Int16" />
+          <Property Name="SpecifiedMode" Type="Int16" />
+          <Property Name="Action" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+          <Property Name="UpdatedUser" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="EventIndex" Type="Int64" />
+          <Property Name="Suggest" Type="Boolean" />
+        </EntityType>
+        <EntityContainer Name="HREntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="HR_Department" EntityType="Self.HR_Department" />
+          <EntitySet Name="HR_Employee" EntityType="Self.HR_Employee" />
+          <EntitySet Name="HR_EmployeeSystem" EntityType="Self.HR_EmployeeSystem" />
+          <EntitySet Name="HR_WorkingInfo" EntityType="Self.HR_WorkingInfo" />
+          <EntitySet Name="MS_ValidLocationList" EntityType="Self.MS_ValidLocationList" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="TA_EmployeeSpecialShiftDetail" EntityType="Self.TA_EmployeeSpecialShiftDetail" />
+          <EntitySet Name="TA_TimeLog" EntityType="Self.TA_TimeLog" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TestModelStoreContainer" CdmEntityContainer="HREntities">
+          <EntitySetMapping Name="HR_Department">
+            <EntityTypeMapping TypeName="TestModel.HR_Department">
+              <MappingFragment StoreEntitySet="HR_Department">
+                <ScalarProperty Name="Index" ColumnName="Index" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="NameInEng" ColumnName="NameInEng" />
+                <ScalarProperty Name="Code" ColumnName="Code" />
+                <ScalarProperty Name="ParentIndex" ColumnName="ParentIndex" />
+                <ScalarProperty Name="CompanyID" ColumnName="CompanyID" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="WorkingDays" ColumnName="WorkingDays" />
+                <ScalarProperty Name="WorkingHours" ColumnName="WorkingHours" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedUser" ColumnName="UpdatedUser" />
+                <ScalarProperty Name="Location" ColumnName="Location" />
+                <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="ContactEmail" ColumnName="ContactEmail" />
+                <ScalarProperty Name="DateOfCreation" ColumnName="DateOfCreation" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HR_Employee">
+            <EntityTypeMapping TypeName="TestModel.HR_Employee">
+              <MappingFragment StoreEntitySet="HR_Employee">
+                <ScalarProperty Name="EmployeeATID" ColumnName="EmployeeATID" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+                <ScalarProperty Name="CardNumber" ColumnName="CardNumber" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="MidName" ColumnName="MidName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="NickName" ColumnName="NickName" />
+                <ScalarProperty Name="Gender" ColumnName="Gender" />
+                <ScalarProperty Name="JoinedDate" ColumnName="JoinedDate" />
+                <ScalarProperty Name="DayOfBirth" ColumnName="DayOfBirth" />
+                <ScalarProperty Name="MonthOfBirth" ColumnName="MonthOfBirth" />
+                <ScalarProperty Name="YearOfBirth" ColumnName="YearOfBirth" />
+                <ScalarProperty Name="PlaceOfBirth" ColumnName="PlaceOfBirth" />
+                <ScalarProperty Name="Ethnic" ColumnName="Ethnic" />
+                <ScalarProperty Name="Religion" ColumnName="Religion" />
+                <ScalarProperty Name="Nationality" ColumnName="Nationality" />
+                <ScalarProperty Name="HouseHold" ColumnName="HouseHold" />
+                <ScalarProperty Name="NativeCity" ColumnName="NativeCity" />
+                <ScalarProperty Name="NRIC" ColumnName="NRIC" />
+                <ScalarProperty Name="DateOfNRIC" ColumnName="DateOfNRIC" />
+                <ScalarProperty Name="PlaceOfNRIC" ColumnName="PlaceOfNRIC" />
+                <ScalarProperty Name="EmployeeKind" ColumnName="EmployeeKind" />
+                <ScalarProperty Name="EducationIndex" ColumnName="EducationIndex" />
+                <ScalarProperty Name="EducationLevel" ColumnName="EducationLevel" />
+                <ScalarProperty Name="MaritalSatus" ColumnName="MaritalSatus" />
+                <ScalarProperty Name="TaxNumber" ColumnName="TaxNumber" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="MarkForDelete" ColumnName="MarkForDelete" />
+                <ScalarProperty Name="MaritalDate" ColumnName="MaritalDate" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedUser" ColumnName="UpdatedUser" />
+                <ScalarProperty Name="WorkingDate" ColumnName="WorkingDate" />
+                <ScalarProperty Name="UnionJoinedDate" ColumnName="UnionJoinedDate" />
+                <ScalarProperty Name="NativeCityIndex" ColumnName="NativeCityIndex" />
+                <ScalarProperty Name="NativeCity_District" ColumnName="NativeCity_District" />
+                <ScalarProperty Name="SocialInsNo" ColumnName="SocialInsNo" />
+                <ScalarProperty Name="NativeCity_Wards" ColumnName="NativeCity_Wards" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HR_EmployeeSystem">
+            <EntityTypeMapping TypeName="TestModel.HR_EmployeeSystem">
+              <MappingFragment StoreEntitySet="HR_EmployeeSystem">
+                <ScalarProperty Name="Index" ColumnName="Index" />
+                <ScalarProperty Name="EmployeeATID" ColumnName="EmployeeATID" />
+                <ScalarProperty Name="SystemIndex" ColumnName="SystemIndex" />
+                <ScalarProperty Name="AccountName" ColumnName="AccountName" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedUser" ColumnName="UpdatedUser" />
+                <ScalarProperty Name="Helper" ColumnName="Helper" />
+                <ScalarProperty Name="ResetPasswordCode" ColumnName="ResetPasswordCode" />
+                <ScalarProperty Name="Level1" ColumnName="Level1" />
+                <ScalarProperty Name="Level2" ColumnName="Level2" />
+                <ScalarProperty Name="Level3" ColumnName="Level3" />
+                <ScalarProperty Name="Level4" ColumnName="Level4" />
+                <ScalarProperty Name="Level5" ColumnName="Level5" />
+                <ScalarProperty Name="Active" ColumnName="Active" />
+                <ScalarProperty Name="HRPro7Portal" ColumnName="HRPro7Portal" />
+                <ScalarProperty Name="TrainingPortal" ColumnName="TrainingPortal" />
+                <ScalarProperty Name="EvaluationPortal" ColumnName="EvaluationPortal" />
+                <ScalarProperty Name="PleasureEstimatingPortal" ColumnName="PleasureEstimatingPortal" />
+                <ScalarProperty Name="EclaimPortal" ColumnName="EclaimPortal" />
+                <ScalarProperty Name="RecruitmentPortal" ColumnName="RecruitmentPortal" />
+                <ScalarProperty Name="SystemGroup" ColumnName="SystemGroup" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="HR_WorkingInfo">
+            <EntityTypeMapping TypeName="TestModel.HR_WorkingInfo">
+              <MappingFragment StoreEntitySet="HR_WorkingInfo">
+                <ScalarProperty Name="Index" ColumnName="Index" />
+                <ScalarProperty Name="EmployeeATID" ColumnName="EmployeeATID" />
+                <ScalarProperty Name="DepartmentIndex" ColumnName="DepartmentIndex" />
+                <ScalarProperty Name="PositionIndex" ColumnName="PositionIndex" />
+                <ScalarProperty Name="TitlesIndex" ColumnName="TitlesIndex" />
+                <ScalarProperty Name="IsManager" ColumnName="IsManager" />
+                <ScalarProperty Name="ManagedDepartment" ColumnName="ManagedDepartment" />
+                <ScalarProperty Name="DirectManager" ColumnName="DirectManager" />
+                <ScalarProperty Name="FromDate" ColumnName="FromDate" />
+                <ScalarProperty Name="ToDate" ColumnName="ToDate" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedUser" ColumnName="UpdatedUser" />
+                <ScalarProperty Name="CreateSeparatedSalary" ColumnName="CreateSeparatedSalary" />
+                <ScalarProperty Name="ManagedOtherDepartments" ColumnName="ManagedOtherDepartments" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="EmployeeKind" ColumnName="EmployeeKind" />
+                <ScalarProperty Name="Synched" ColumnName="Synched" />
+                <ScalarProperty Name="JobDescription" ColumnName="JobDescription" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MS_ValidLocationList">
+            <EntityTypeMapping TypeName="TestModel.MS_ValidLocationList">
+              <MappingFragment StoreEntitySet="MS_ValidLocationList">
+                <ScalarProperty Name="Index" ColumnName="Index" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="IPAddress" ColumnName="IPAddress" />
+                <ScalarProperty Name="SerialNumber" ColumnName="SerialNumber" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedUser" ColumnName="UpdatedUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="TestModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TA_EmployeeSpecialShiftDetail">
+            <EntityTypeMapping TypeName="TestModel.TA_EmployeeSpecialShiftDetail">
+              <MappingFragment StoreEntitySet="TA_EmployeeSpecialShiftDetail">
+                <ScalarProperty Name="EmployeeATID" ColumnName="EmployeeATID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+                <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedUser" ColumnName="UpdatedUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TA_TimeLog">
+            <EntityTypeMapping TypeName="TestModel.TA_TimeLog">
+              <MappingFragment StoreEntitySet="TA_TimeLog">
+                <ScalarProperty Name="EmployeeATID" ColumnName="EmployeeATID" />
+                <ScalarProperty Name="Time" ColumnName="Time" />
+                <ScalarProperty Name="MachineSerial" ColumnName="MachineSerial" />
+                <ScalarProperty Name="InOutMode" ColumnName="InOutMode" />
+                <ScalarProperty Name="SpecifiedMode" ColumnName="SpecifiedMode" />
+                <ScalarProperty Name="Action" ColumnName="Action" />
+                <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+                <ScalarProperty Name="UpdatedUser" ColumnName="UpdatedUser" />
+                <ScalarProperty Name="EventIndex" ColumnName="EventIndex" />
+                <ScalarProperty Name="Suggest" ColumnName="Suggest" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

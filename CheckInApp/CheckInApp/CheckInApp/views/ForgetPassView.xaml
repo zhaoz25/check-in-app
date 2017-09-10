@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CheckInApp.views.ForgetPassView">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="LightBlue">
+            <Label Text="Nhập email để phục hồi" XAlign="Center" TextColor="Black" FontSize="20" Margin="20"/>
+            <Entry x:Name="etForgetEmail" Placeholder="Email:" TextColor="Black"/>
+            <ActivityIndicator x:Name="loadingProgress" Color="CornflowerBlue" IsRunning="false" />
+            <Button x:Name="btnSendMail" Margin="80,10,80,10" BackgroundColor="MidnightBlue" 
+                    FontSize="20" TextColor="White" Text="Gửi email xác nhận" Clicked="btnSendMail_Clicked"/>
+            
+            <Label Text="Phục hồi mật khẩu" XAlign="Center" TextColor="Black" FontSize="20" Margin="10"/>
+            <Entry x:Name="etMail"  Placeholder="Email:" TextColor="Black"/>
+            <Entry x:Name="etCode"  Placeholder="Code:" TextColor="Black"/>
+            <Entry x:Name="etNewPass" IsPassword="True"  Placeholder="Mật khẩu mới:" TextColor="Black"/>
+            <Entry x:Name="etConfirmPass" IsPassword="True"  Placeholder="Nhập lại mật khẩu:" TextColor="Black"/>
+            <ActivityIndicator x:Name="loadingProgress2" Color="CornflowerBlue" IsRunning="false" />
+            <Button x:Name="btnUpdateForgotPass" Margin="80,10,80,10" BackgroundColor="MidnightBlue" 
+                    FontSize="20" TextColor="White" Text="Xác nhận" Clicked="btnUpdateForgotPass_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

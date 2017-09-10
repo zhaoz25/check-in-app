@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CheckInApp.views.LogDetailView">
+    <ContentPage.Content>
+        <StackLayout >
+            
+            <Label x:Name="labelDS" Text="Nhân viên " TextColor="DarkBlue" FontAttributes="Bold" 
+                   FontSize="20" XAlign="Center" Margin="0,10,0,0"/>
+
+            <Picker x:Name="picker" Title="Tìm theo tháng " SelectedIndexChanged="picker_SelectedIndexChanged">
+            </Picker>
+            
+            <Label Text="Bảng chấm công " TextColor="DarkBlue" FontAttributes="Bold"
+                   FontSize="22" Margin="0,0,0,0"/>
+            <ActivityIndicator x:Name="loadingProgress" IsRunning="False" IsVisible="False"/>
+            <ListView x:Name="lvLog" RowHeight="75" SeparatorVisibility="Default">
+                <ListView.ItemTemplate >
+                    <DataTemplate>
+                        <ViewCell >
+                            <ViewCell.View >
+                                <StackLayout >
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="{Binding inOut}" WidthRequest="80" BackgroundColor="{Binding color}" FontSize="20" HorizontalOptions="Center"/>
+                                        <Label Text="{Binding timeFormat}" FontSize="20" HorizontalOptions="Center"/>
+                                    </StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Serial:" FontSize="20" />
+                                        <Label Text="{Binding MachineSerial}" FontSize="20" HorizontalOptions="Center"/>
+                                        <Label Text="  ||  Chế độ:" FontSize="20" />
+                                        <Label Text="{Binding SpecifiedMode}" FontSize="20" HorizontalOptions="Center"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell.View>
+                        </ViewCell> –>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,14 @@
+E:\LT\Xamarin\CheckInApp\SharedProject\obj\Debug\SharedProject.csprojResolveAssemblyReference.cache
+E:\LT\Xamarin\CheckInApp\SharedProject\obj\Debug\SharedProject.csproj.CoreCompileInputs.cache
+E:\LT\Xamarin\CheckInApp\SharedProject\bin\Debug\SharedProject.dll
+E:\LT\Xamarin\CheckInApp\SharedProject\bin\Debug\SharedProject.pdb
+E:\LT\Xamarin\CheckInApp\SharedProject\bin\Debug\Xamarin.Forms.Core.dll
+E:\LT\Xamarin\CheckInApp\SharedProject\bin\Debug\Xamarin.Forms.Platform.dll
+E:\LT\Xamarin\CheckInApp\SharedProject\bin\Debug\Xamarin.Forms.Xaml.dll
+E:\LT\Xamarin\CheckInApp\SharedProject\bin\Debug\Xamarin.Forms.Core.pdb
+E:\LT\Xamarin\CheckInApp\SharedProject\bin\Debug\Xamarin.Forms.Core.xml
+E:\LT\Xamarin\CheckInApp\SharedProject\bin\Debug\Xamarin.Forms.Platform.pdb
+E:\LT\Xamarin\CheckInApp\SharedProject\bin\Debug\Xamarin.Forms.Xaml.pdb
+E:\LT\Xamarin\CheckInApp\SharedProject\bin\Debug\Xamarin.Forms.Xaml.xml
+E:\LT\Xamarin\CheckInApp\SharedProject\obj\Debug\SharedProject.dll
+E:\LT\Xamarin\CheckInApp\SharedProject\obj\Debug\SharedProject.pdb

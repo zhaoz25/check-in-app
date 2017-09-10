@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Messier16.Forms.iOS.Controls.Checkbox</name>
+    </assembly>
+    <members>
+        <member name="T:Messier16.Forms.iOS.Controls.CheckedChangedEventArgs">
+            <summary>
+            Generic event argument class
+            </summary>
+        </member>
+        <member name="M:Messier16.Forms.iOS.Controls.CheckedChangedEventArgs.#ctor(System.Boolean)">
+            <summary>
+            Initializes a new instance of the <see cref="T:System.EventArgs"/> class.
+            </summary>
+            <param name="value">Value of the argument</param>
+        </member>
+        <member name="P:Messier16.Forms.iOS.Controls.CheckedChangedEventArgs.Checked">
+            <summary>
+            Gets the value of the event argument
+            </summary>
+        </member>
+        <member name="T:Messier16.Forms.iOS.Controls.CheckboxRenderer">
+            <summary>
+            The check box renderer for iOS.
+            </summary>
+        </member>
+        <member name="M:Messier16.Forms.iOS.Controls.CheckboxRenderer.Init">
+            <summary>
+            Used for registration with dependency service
+            </summary>
+        </member>
+        <member name="M:Messier16.Forms.iOS.Controls.CheckboxRenderer.OnElementChanged(Xamarin.Forms.Platform.iOS.ElementChangedEventArgs{Messier16.Forms.Controls.Checkbox})">
+            <summary>
+            Handles the Element Changed event
+            </summary>
+            <param name="e">The e.</param>
+        </member>
+    </members>
+</doc>
